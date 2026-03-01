@@ -1,15 +1,21 @@
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
-
     void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
+        
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += transform.right * 1f * -1;
+        }
 
-        Vector3 movement = new Vector3(moveX, 0, moveZ);
-        transform.Translate(movement * speed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("hefuei");
+            transform.position += transform.right * 0.01f;
+        }
+
     }
 }
